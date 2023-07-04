@@ -26,7 +26,7 @@ namespace Exception
                 for(int j = 0; j < students.Length; j++)
                 {
 
-                    return false;
+                    throw new ApplicationException("two Student have the Same RegistrationNumber");
                 }
             }
             return true;
