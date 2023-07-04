@@ -25,8 +25,11 @@ namespace Exception
             {
                 for(int j = 0; j < students.Length; j++)
                 {
-
-                    throw new ApplicationException("two Student have the Same RegistrationNumber");
+                    if (!students.CanWrite)
+                    {
+                        throw new ApplicationException("two Student have the Same RegistrationNumber");
+                    }
+                        
                 }
             }
             return true;
