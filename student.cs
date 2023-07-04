@@ -25,7 +25,7 @@ namespace Exception
             {
                 for(int j = 0; j < students.Length; j++)
                 {
-                    if (!students.CanWrite)
+                    if (students[i].registrationNumber == students[j].registrationNumber)
                     {
                         throw new ApplicationException("two Student have the Same RegistrationNumber");
                     }
