@@ -1,38 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Exception
 {
-    internal class student
+    internal class User
     {
         string name { get; set; }
-        string registrationNumber { get; set; }
+        public int Id { get; set; }
 
-        int age { get; set; }
+        public Gender gender { get; set; }
+        public CarType carType{ get; set; }
 
-        public student(string name, string registrationNumber, int age)
+        public User(int Id, string name, Gender gender, CarType carType)
         {
+            this.Id = Id;
             this.name = name;
-            this.registrationNumber = registrationNumber;
-            this.age = age;
+            this.gender = gender;
+            this.carType = carType;
         }
-        public static Boolean VlodateStudents(student[] students) 
+        
+        enum Gender
         {
-            for (int i = 0; i < students.Length; i++)
-            {
-                for(int j = 0; j < students.Length; j++)
-                {
-                    if (students[i].registrationNumber == students[j].registrationNumber)
-                    {
-                        throw new ApplicationException("two Student have the Same RegistrationNumber");
-                    }
-                        
-                }
-            }
-            return true;
+            Male,
+            FAMALE,
+            OTHER
+        }
+
+        enum CarType
+        {
+            [Description("this is a Basic ride. car will be non air-conditioned")]
+            BASIC=100,
+            [Description("this is aPREMIUM ride. AC is good")]
+            PREMIUM = 300,
+            [Description("this is a Basic ride. car will be non air-conditioned")]
+            VAN =202,
+            [Description("this is a Message seats")]
+            ULTRA_PREMIUM =305,
+            [Description("this is has no AC")]
+            MOTORCYCLE = 50
+
+
         }
     }
 }
