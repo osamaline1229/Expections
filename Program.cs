@@ -23,7 +23,7 @@ internal class Program
         Console.WriteLine(description);
 
         int ordinalValue = 205;
-        CarType type = (Cartype)ordinalValue;
+        CarType type = (CarType)ordinalValue;
         Console.WriteLine(type.ToString());
     }
 

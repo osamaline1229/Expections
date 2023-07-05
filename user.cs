@@ -13,7 +13,7 @@ namespace Exception
         public int Id { get; set; }
 
         public Gender gender { get; set; }
-        public CarType carType{ get; set; }
+        public CarType carType { get; set; }
 
         public User(int Id, string name, Gender gender, CarType carType)
         {
